@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #6a1b9a;
+  --secondary-color: #9c27b0;
+  --text-color: #333;
+  --background-color: #f8f9fa;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+main {
+  margin-top: 60px;
+}
+
+section {
+  padding: 5rem 10%;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #f6f0fe, #e3f2fd);
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-showcase {
+  margin-bottom: 3rem;
+}
+
+.color-changing-demo {
+  width: 300px;
+  height: 300px;
+  margin: 2rem auto;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border-radius: 20px;
+  animation: colorChange 10s infinite alternate;
+}
+
+.product-description {
+  max-width: 800px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.product-description h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.product-description p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.product-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.spec-item {
+  text-align: center;
+}
+
+.spec-item h4 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+@keyframes colorChange {
+  0% { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+  50% { background: linear-gradient(45deg, #4ecdc4, #9c27b0); }
+  100% { background: linear-gradient(45deg, #9c27b0, #ff6b6b); }
+}
+
+.features-section {
+  background-color: white;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.how-it-works-section {
+  background-color: #f8f9fa;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step {
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact-section {
+  background-color: white;
+  text-align: center;
+}
+
+.contact-info {
+  margin-top: 2rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 3rem 5%;
+  }
+
+  .product-description {
+    padding: 1.5rem;
+  }
+
+  .product-specs {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
